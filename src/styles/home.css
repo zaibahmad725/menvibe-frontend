@@ -1,0 +1,144 @@
+.home {
+  background: var(--bg);
+}
+
+.section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Reviews */
+.reviews-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 2rem;
+}
+
+.reviews-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+
+.review-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: border-color 0.2s;
+}
+
+.review-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.stars {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.review-text {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.review-avatar {
+  width: 34px;
+  height: 34px;
+  background: var(--gold);
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.review-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.review-time {
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+
+/* Stats */
+.stats-section {
+  padding: 4rem 2rem;
+}
+
+.stats-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.stat-block {
+  padding: 1.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.stat-val {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+
+.stat-lbl {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+@media (max-width: 1024px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+}

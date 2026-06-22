@@ -1,0 +1,350 @@
+/* ---- Shared modal (delete confirmation) — reused if not already in admin.css ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.modal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.modal-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.modal-text {
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.btn-delete-confirm {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-delete-confirm:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.btn-delete-confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- Toggle switch (active/inactive) ---- */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 21px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 2px;
+  bottom: 2px;
+  background: var(--gray-light);
+  border-radius: 50%;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--gold);
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  transform: translateX(17px);
+  background: var(--gold);
+}
+
+/* ---- Hero slide form ---- */
+.hero-slide-form {
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+.hero-form-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-form-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-image-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  aspect-ratio: 16 / 10;
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.hero-image-dropzone:hover {
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.04);
+}
+
+.hero-image-dropzone .dropzone-icon {
+  font-size: 2rem;
+}
+
+.hero-image-dropzone .dropzone-text {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  font-weight: 500;
+}
+
+.hero-image-dropzone .dropzone-hint {
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+
+.hero-image-preview-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.hero-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-image-replace {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  padding: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hero-image-replace:hover {
+  background: rgba(212, 175, 55, 0.85);
+  color: #000;
+}
+
+.hero-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-hint {
+  font-size: 0.74rem;
+  color: var(--gray);
+  margin-top: 0.3rem;
+}
+
+/* ---- Hero slide list ---- */
+.hero-slides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.hero-slide-card {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1.2rem;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.hero-slide-card.inactive {
+  opacity: 0.55;
+}
+
+.hero-slide-thumb {
+  width: 110px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.hero-slide-info {
+  min-width: 0;
+}
+
+.hero-slide-info-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.hero-slide-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.hero-slide-inactive-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(136, 136, 136, 0.2);
+  color: var(--gray);
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+}
+
+.hero-slide-title-preview {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero-slide-subtitle-preview {
+  font-size: 0.8rem;
+  color: var(--gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.15rem;
+}
+
+.hero-slide-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.hero-reorder-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.reorder-btn {
+  width: 24px;
+  height: 20px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--gray-light);
+  font-size: 0.7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.reorder-btn:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.reorder-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .hero-form-layout {
+    grid-template-columns: 1fr;
+  }
+  .hero-slide-card {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero-slide-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    margin-top: 0.6rem;
+  }
+}

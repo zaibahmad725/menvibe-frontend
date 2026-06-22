@@ -1,0 +1,272 @@
+.product-details-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.pd-main-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.pd-thumbnails {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.pd-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+
+.pd-thumb.active,
+.pd-thumb:hover {
+  opacity: 1;
+  border-color: var(--gold);
+}
+
+.pd-brand {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.pd-name {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.pd-price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.pd-meta {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pd-tag {
+  padding: 0.3rem 0.8rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+
+.pd-stock {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.in-stock {
+  background: rgba(76, 175, 122, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(76, 175, 122, 0.3);
+}
+
+.out-stock {
+  background: rgba(226, 84, 84, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(226, 84, 84, 0.3);
+}
+
+.pd-description {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* ---- Actions: Buy Now full-width on top, Add to Cart + WhatsApp row below ---- */
+.pd-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.pd-actions-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-buy-now {
+  width: 100%;
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 0.95rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-buy-now:hover:not(:disabled) {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.btn-buy-now:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-add-cart {
+  flex: 1;
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--gold);
+  padding: 0.85rem 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-add-cart:hover:not(:disabled) {
+  background: var(--gold);
+  color: #000;
+}
+
+.btn-add-cart.btn-added {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.btn-add-cart:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pd-qty {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.pd-qty-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-size: 1.1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.qty-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.qty-value {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* WhatsApp button */
+.btn-buy-whatsapp {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #25D366;
+  color: black;
+  border: none;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-buy-whatsapp:hover:not(:disabled) {
+  background: #1ebe5d;
+}
+
+.btn-buy-whatsapp:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Trust badges row */
+.pd-trust {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+  font-size: 0.75rem;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  flex-wrap: wrap;
+}
+.pd-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .product-details-page {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

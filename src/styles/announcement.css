@@ -1,0 +1,38 @@
+.announcement-bar {
+  background: var(--gold);
+  color: #000;
+  overflow: hidden;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.announcement-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.announcement-item {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0 0.5rem;
+}
+
+.announcement-divider {
+  margin: 0 1.2rem;
+  font-size: 0.5rem;
+  opacity: 0.5;
+  vertical-align: middle;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track { animation: none; }
+}
