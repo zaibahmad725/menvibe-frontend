@@ -25,13 +25,19 @@ function StarRating({ count }) {
 function Home() {
   return (
     <div className="home">
+      {/* 1. Announcement bar — slim, always top */}
       <AnnouncementBar />
+
+      {/* 2. Hero slider — first thing customer sees */}
       <HeroSlider />
-      <TrustBar />
-      <PromoBanners />
+
+      {/* 3. Featured products — immediately after hero, no delay */}
       <FeaturedProducts />
 
-      {/* Reviews section */}
+      {/* 4. Promo banners — after customer has seen products */}
+      <PromoBanners />
+
+      {/* 5. Reviews */}
       <section className="reviews-section">
         <div className="reviews-inner">
           <p className="section-eyebrow">Customer Stories</p>
@@ -54,7 +60,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Stats section */}
+      {/* 6. Stats */}
       <section className="stats-section">
         <div className="stats-inner">
           {[
@@ -70,6 +76,9 @@ function Home() {
           ))}
         </div>
       </section>
+
+      {/* 7. Trust bar — just above footer, where customers look before buying */}
+      <TrustBar />
     </div>
   );
 }
