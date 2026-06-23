@@ -108,6 +108,9 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: opacity 0.2s;
+  padding: 8px 12px;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .remove-btn:hover {
