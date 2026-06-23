@@ -17,7 +17,6 @@ const PAYMENT_ACCOUNTS = {
         { label: "Bank Name", value: "MCB Islamic" },
         { label: "Account Title", value: "Adil Arif" },
         { label: "Account Number", value: "0641005674310001" },
-        { label: "IBAN", value: "not yet available" },
       ],
     },
     {
@@ -27,7 +26,6 @@ const PAYMENT_ACCOUNTS = {
         { label: "Bank Name", value: "Habib Bank Limited (HBL)" },
         { label: "Account Title", value: "Adil Arif" },
         { label: "Account Number", value: "24447107566103" },
-        { label: "IBAN", value: "PK00 HABB 0009 8765 4321 098" },
       ],
     },
   ],
