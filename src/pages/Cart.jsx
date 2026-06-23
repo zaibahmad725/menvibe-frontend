@@ -25,8 +25,13 @@ function Cart() {
           {cart.map((item) => (
             <div key={item._id} className="cart-item">
               <img
-                src={item.images?.[0] ? `${API_URL}${item.images[0]}` : "/placeholder.jpg"}
-                alt={item.name}
+                src={
+                          item.images?.[0]
+                            ? item.images[0].startsWith("http")
+                              ? item.images[0]
+                              : `${API_URL}${item.images[0]}`
+                            : "/placeholder.jpg"
+                        }                alt={item.name}
                 className="cart-item-img"
               />
 
