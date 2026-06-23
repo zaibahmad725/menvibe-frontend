@@ -351,7 +351,13 @@ function Checkout() {
 
           {cart.map((item) => (
             <div key={item._id} className="checkout-item">
-              <img src={item.images?.[0] ? `${API_URL}${item.images[0]}` : "/placeholder.jpg"} alt={item.name} />
+              <img src={
+  item.images?.[0]
+    ? item.images[0].startsWith("http")
+      ? item.images[0]
+      : `${API_URL}${item.images[0]}`
+    : "/placeholder.jpg"
+} />
               <div>
                 <p className="ci-name">{item.name}</p>
                 <p className="ci-brand">{item.brand}</p>

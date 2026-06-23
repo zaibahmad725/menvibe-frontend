@@ -55,10 +55,12 @@ function ProductDetails() {
       <div className="pd-images">
         <img
           src={
-        product.images?.[activeImg]
-          ? `${API_URL}${product.images[activeImg]}`
-          : "/placeholder.jpg"
-      }
+  product.images?.[activeImg]
+    ? product.images[activeImg].startsWith("http")
+      ? product.images[activeImg]
+      : `${API_URL}${product.images[activeImg]}`
+    : "/placeholder.jpg"
+}
           alt={product.name}
           className="pd-main-img"
         />
@@ -67,7 +69,11 @@ function ProductDetails() {
             {product.images.map((img, i) => (
               <img
                 key={i}
-                src={`${API_URL}${img}`}
+                src={
+  img.startsWith("http")
+    ? img
+    : `${API_URL}${img}`
+}
                 alt={`${product.name} ${i + 1}`}
                 className={`pd-thumb ${i === activeImg ? "active" : ""}`}
                 onClick={() => setActiveImg(i)}
